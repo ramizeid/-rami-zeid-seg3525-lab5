@@ -192,7 +192,7 @@ function isWebsiteInEnglish() {
 }
 
 function isWebsiteInFrench() {
-    const frenchTranslationPageUrl = 'https://translate.google.com/translate?hl=en&sl=auto&tl=fr&u=https://ramizeid.github.io/rami-zeid-seg3525-lab3/';
+    const frenchTranslationPageUrl = 'https://epaour4rkxxsoqpkrnrcjdanvy-ac4c6men2g7xr2a-ramizeid-github-io.translate.goog/rami-zeid-seg3525-lab3/';
     console.log(currentUrl);
     console.log(frenchTranslationPageUrl);
     console.log(currentUrl === frenchTranslationPageUrl);
