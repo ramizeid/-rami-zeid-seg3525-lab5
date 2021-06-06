@@ -27,6 +27,8 @@ const productsPanelButtonId = "products-panel-btn";
 const shoppingCartBodyId = "shopping-cart-body";
 const shoppingCartButtonId = "shopping-cart-btn";
 const currentUrl = window.location.href;
+const englishTranslationPageUrl = 'https://ramizeid.github.io/rami-zeid-seg3525-lab3/';
+const frenchTranslationPageUrl = 'https://epaour4rkxxsoqpkrnrcjdanvy-ac4c6men2g7xr2a-ramizeid-github-io.translate.goog/rami-zeid-seg3525-lab3/';
 let productsToShow = [];
 let productsInCart = [];
 
@@ -181,24 +183,14 @@ function onLoad() {
 }
 
 function isWebsiteInEnglish() {
-    const englishTranslationPageUrl = 'https://ramizeid.github.io/rami-zeid-seg3525-lab3/';
-    console.log(currentUrl);
-    console.log(isWebsiteInEnglish);
-    console.log(currentUrl === englishTranslationPageUrl);
-
     if (currentUrl !== englishTranslationPageUrl) {
-        window.open(englishTranslationPageUrl)
+        window.location.href = englishTranslationPageUrl;
     }
 }
 
 function isWebsiteInFrench() {
-    const frenchTranslationPageUrl = 'https://epaour4rkxxsoqpkrnrcjdanvy-ac4c6men2g7xr2a-ramizeid-github-io.translate.goog/rami-zeid-seg3525-lab3/';
-    console.log(currentUrl);
-    console.log(frenchTranslationPageUrl);
-    console.log(currentUrl === frenchTranslationPageUrl);
-
     if (currentUrl !== frenchTranslationPageUrl) {
-        window.open(frenchTranslationPageUrl)
+        window.location.href = frenchTranslationPageUrl;
     }
 }
 
