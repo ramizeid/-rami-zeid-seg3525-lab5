@@ -15,6 +15,8 @@ const cartTable = document.getElementById("cart-table");
 const cartTableTbody = document.getElementById("cart-table-tbody");
 const cartTableTfoot = document.getElementById("cart-table-tfoot");
 const placeOrderButton = document.getElementById("place-order-button");
+const englishTranslationButton = document.getElementById("english-translate-btn");
+const frenchTranslationButton = document.getElementById("french-translate-btn");
 
 // General Script Variables
 const panelsCount = panels.length;
@@ -177,6 +179,14 @@ onLoad();
 function onLoad() {
     for (let panel = 0; panel < panelsCount; panel++) {
         panels[panel].style.display = "none";
+    }
+
+    if (currentUrl === englishTranslationPageUrl) {
+        englishTranslationButton.disabled = true;
+    }
+
+    if (currentUrl === frenchTranslationPageUrl) {
+        frenchTranslationButton.disabled = true;
     }
 
     loadPanel(clientPanelBodyId, clientPanelButtonId);
