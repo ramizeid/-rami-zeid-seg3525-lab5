@@ -180,12 +180,14 @@ function onLoad() {
 }
 
 function isWebsiteInEnglish() {
+    console.log("TRANSLATING TO ENGLISH");
     if (window.location.href !== 'https://ramizeid.github.io/rami-zeid-seg3525-lab3/') {
         window.open('https://ramizeid.github.io/rami-zeid-seg3525-lab3/')
     }
 }
 
 function isWebsiteInFrench() {
+    console.log("TRANSLATING TO FRENCH");
     if (window.location.href !=='https://translate.google.com/translate?hl=en&sl=auto&tl=fr&u=https://ramizeid.github.io/rami-zeid-seg3525-lab3/') {
         window.open('https://translate.google.com/translate?hl=en&sl=auto&tl=fr&u=https://ramizeid.github.io/rami-zeid-seg3525-lab3/')
     }
