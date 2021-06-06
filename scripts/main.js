@@ -179,6 +179,18 @@ function onLoad() {
     loadPanel(clientPanelBodyId, clientPanelButtonId);
 }
 
+function isWebsiteInEnglish() {
+    if (window.location.href !== 'https://ramizeid.github.io/rami-zeid-seg3525-lab3/') {
+        window.open('https://ramizeid.github.io/rami-zeid-seg3525-lab3/')
+    }
+}
+
+function isWebsiteInFrench() {
+    if (window.location.href !=='https://translate.google.com/translate?hl=en&sl=auto&tl=fr&u=https://ramizeid.github.io/rami-zeid-seg3525-lab3/') {
+        window.open('https://translate.google.com/translate?hl=en&sl=auto&tl=fr&u=https://ramizeid.github.io/rami-zeid-seg3525-lab3/')
+    }
+}
+
 function loadPanel(panelInput, panelInputButton) {
     // This function loads the wanted panel & changes the color of its button
     const panelBody = document.getElementById(panelInput);
