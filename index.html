@@ -35,7 +35,7 @@
 					<a class="nav-link" id="navbar-option" onclick="servicesScroll()">Services</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#" id="navbar-option">Booking</a>
+					<a class="nav-link" id="navbar-option" onclick="bookingScroll()">Booking</a>
 				</li>
 		  	</ul>
 
@@ -158,8 +158,108 @@
 				<p id="about-text-1">Our Services</p>
 			</div>
 
-			<div class="accordion" id="servicesAccordion">
+			<!-- Cards courtesy of codepen.io, and text courtesy of Google: https://codepen.io/peterdanis/pen/oeqNOg-->
+			<div class="row" style="margin-top: 2%">
+				<div class="col d-flex align-items-stretch" style="margin-left: 5%; margin-right: 2.5%">
+					<div class="card card-custom bg-white border-white border-0" style="border-radius: 20px">
+						<div class="card-custom-img" style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);"></div>
+						<div class="card-custom-avatar">
+							<img class="img-fluid" src="images/acupunture-img.png" alt="Avatar" />
+						</div>
+						<div class="card-body" style="overflow-y: auto">
+							<h4 class="card-title" id="service-card-title">Acupuncture</h4>
+							<p class="card-text" id="service-card-body">Acupuncture is a stimulation therapy that involves inserting very fine needles into specific points in the body. It is an ancient Chinese remedy that encourages natural healing and pain relief by promoting harmony within the body.</p>
+						</div>
+						<div class="card-footer" style="background: inherit; border-color: inherit;">
+							<p class="alert text-center" role="alert" id="q4-range-text" style="background-color: #EEEEEE; border-radius: 15px; font-family: 'Montserrat', sans-serif; border-color: #3B3B3B"><strong>Price: $15/Hour</strong></p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col d-flex align-items-stretch" style="margin-right: 2.5%">
+					<div class="card card-custom bg-white border-white border-0" style="border-radius: 20px">
+						<div class="card-custom-img" style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);"></div>
+						<div class="card-custom-avatar">
+							<img class="img-fluid" src="images/chinese-cupping-img.png" alt="Avatar" />
+						</div>
+						<div class="card-body" style="overflow-y: auto">
+							<h4 class="card-title" id="service-card-title">Chinese Cupping</h4>
+							<p class="card-text" id="service-card-body">Chinese Cupping is an antient alternative therapy that is used to treat a wide variety of conditions that create muscle aches and pains. During treatment, a cup is placed on the skin and then suctioned onto the skin, which helps with pain and inflammation as well as facilitate healing with blood flow.</p>
+						</div>
+						<div class="card-footer" style="background: inherit; border-color: inherit;">
+							<p class="alert text-center" role="alert" id="q4-range-text" style="background-color: #EEEEEE; border-radius: 15px; font-family: 'Montserrat', sans-serif; border-color: #3B3B3B"><strong>Price: $25/Hour</strong></p>
+						</div>
+					</div>
+				</div>
 			</div>
+
+			<div class="row" style="margin-top: 2%">
+				<div class="col d-flex align-items-stretch" style="margin-left: 5%; margin-right: 2.5%">
+					<div class="card card-custom bg-white border-white border-0" style="border-radius: 20px">
+						<div class="card-custom-img" style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);"></div>
+						<div class="card-custom-avatar">
+							<img class="img-fluid" src="images/massage-therapy-img.png" alt="Avatar" />
+						</div>
+						<div class="card-body" style="overflow-y: auto">
+							<h4 class="card-title" id="service-card-title">Massage Therapy</h4>
+							<p class="card-text" id="service-card-body">Massage Therapy is a hands-on manipulation of the soft tissue and joints of the body conducted by our top of the line massage therapists. The soft tissues include muscle, skin, tendon and associated fascia, ligaments and joint capsules.</p>
+						</div>
+						<div class="card-footer" style="background: inherit; border-color: inherit;">
+							<p class="alert text-center" role="alert" id="q4-range-text" style="background-color: #EEEEEE; border-radius: 15px; font-family: 'Montserrat', sans-serif; border-color: #3B3B3B"><strong>Price: $30/Hour</strong></p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col d-flex align-items-stretch" style="margin-right: 2.5%;">
+					<div class="card card-custom bg-white border-white border-0" style="border-radius: 20px">
+						<div class="card-custom-img" style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);"></div>
+						<div class="card-custom-avatar">
+							<img class="img-fluid" src="images/concussion-therapy-img.png" alt="Avatar" />
+						</div>
+						<div class="card-body" style="overflow-y: auto">
+							<h4 class="card-title" id="service-card-title">Concussion Therapy</h4>
+							<p class="card-text" id="service-card-body">Our interdisciplinary team of healthcare professionals will work with you and your Doctor or specialist to complete a timely assessment and develop a customized treatment plan to address your specific health concerns. We provide an advanced approach to concussion awareness and management to ensure that you experience the least amount of symptoms.</p>
+						</div>
+						<div class="card-footer" style="background: inherit; border-color: inherit;">
+							<p class="alert text-center" role="alert" id="q4-range-text" style="background-color: #EEEEEE; border-radius: 15px; font-family: 'Montserrat', sans-serif; border-color: #3B3B3B"><strong>Price: $45/Hour</strong></p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col d-flex align-items-stretch" style="margin-right: 2.5%">
+					<div class="card card-custom bg-white border-white border-0" style="border-radius: 20px">
+						<div class="card-custom-img" style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);"></div>
+						<div class="card-custom-avatar">
+							<img class="img-fluid" src="images/electrotherapy-img.png" alt="Avatar" />
+						</div>
+						<div class="card-body" style="overflow-y: auto">
+							<h4 class="card-title" id="service-card-title">Electrotherapy</h4>
+							<p class="card-text" id="service-card-body">Electrotherapy is a more recent evolution of energy-based physiotherapy techniques. In this form of treatment, electrical stimulation is provided by attaching electrodes to the skin, which helps stimulate the body's muscles.</p>
+						</div>
+						<div class="card-footer" style="background: inherit; border-color: inherit;">
+							<p class="alert text-center" role="alert" style="background-color: #EEEEEE; border-radius: 15px; font-family: 'Montserrat', sans-serif; border-color: #3B3B3B"><strong>Price: $50/Hour</strong></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br>
+		</div>
+
+		<div class="with-background-2" id="booking">
+			<hr style="height:10px; border:none; background-color:#393939; margin: 0">
+
+			<div class="container-fluid d-flex align-items-center justify-content-center">
+				<p id="about-text-1">Book an Appointment</p>
+			</div>
+			<br>
+			<div class="container-fluid d-flex align-items-center justify-content-center" style="background: inherit; border-color: inherit;">
+				<p class="alert text-center" id="about-text-3" role="alert" style="background-color: #EEEEEE; border-radius: 15px; font-family: 'Montserrat', sans-serif; border-color: #3B3B3B"><strong>Interested in booking a physiotherapy session with us at our <strong>2446 Bank St</strong> location in <strong>Ottawa</strong>? Fill out the form below!</strong></p>
+			</div>
+
+			<!-- Text courtesy of life spring clinic: http://www.lifespringclinics.ca/mission-vision-values/ -->
+			<div class="row" style="margin-top: 2%">
+			</div>
+			<br>
 		</div>
 
 <!--		<footer class="custom-footer">-->
