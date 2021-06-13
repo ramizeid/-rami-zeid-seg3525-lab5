@@ -3,16 +3,17 @@
 	<link rel="icon" type="image/png" href="images/logo.png"/>
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500" rel="stylesheet">
 	<link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 
 	<head>
 		<meta charset="UTF-8">
 		<title>Physiocare</title>
 
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+		<link href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" type="text/css" href="style/style.css">
-
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+		<link rel="stylesheet" type="text/css" href="dist/bootstrap-clockpicker.min.css">
 	</head>
 
 	<body>
@@ -253,20 +254,131 @@
 			</div>
 			<br>
 			<div class="container-fluid d-flex align-items-center justify-content-center" style="background: inherit; border-color: inherit;">
-				<p class="alert text-center" id="about-text-3" role="alert" style="background-color: #EEEEEE; border-radius: 15px; font-family: 'Montserrat', sans-serif; border-color: #3B3B3B"><strong>Interested in booking a physiotherapy session with us at our <strong>2446 Bank St</strong> location in <strong>Ottawa</strong>? Fill out the form below!</strong></p>
+				<p class="alert text-center" id="about-text-3" role="alert" style="width: 50%; background-color: #EEEEEE; border-radius: 15px; font-family: 'Montserrat', sans-serif; border-color: #3B3B3B"><strong>Interested in booking a physiotherapy session with us at our <strong>2446 Bank St</strong> location in <strong>Ottawa</strong>? Fill out the form below!</strong></p>
 			</div>
+			<div class="container-fluid d-flex align-items-center justify-content-center">
+				<div class="card shadow" id="booking-card">
+					<div class="card-body" id="booking-panel-body">
+						<h5 class="card-title text-center">We'd like to learn more about you!</h5>
+						<hr>
+						<form id="booking-form">
+							<div class="question" id="q1">
+								<p><strong>What is your full name?</strong></p>
+								<input class="form-control" id="q1-text-area" type="text" placeholder="Name">
+							</div>
+							<hr>
+							<div class="question" id="q2">
+								<p><strong>Which service would you like to book?</strong></p>
 
-			<!-- Text courtesy of life spring clinic: http://www.lifespringclinics.ca/mission-vision-values/ -->
-			<div class="row" style="margin-top: 2%">
+								<select class="custom-select text-center" id="q2-dropdown">
+									<option value="q2-none">None</option>
+									<option value="q2-1">Acupuncture - $15/Hour</option>
+									<option value="q2-2">Chinese Cupping - $25/Hour</option>
+									<option value="q2-3">Massage Therapy - $30/Hour</option>
+									<option value="q2-4">Concussion Therapy - $45/Hour</option>
+									<option value="q2-5">Electrotherapy - $50/Hour</option>
+								</select>
+							</div>
+							<hr>
+							<div class="question" id="q3">
+								<p><strong>What is phone number?</strong></p>
+								<input class="form-control" id="q3-text-area" type="text" placeholder="(123)-456-7890">
+							</div>
+							<hr>
+							<div class="question" id="q4">
+								<p><strong>What is your address?</strong></p>
+								<input class="form-control" id="q4-text-area" type="text" placeholder="123 Laurier Avenue, Ottawa">
+							</div>
+							<hr>
+							<div class="question" id="q5">
+								<p><strong>When are you available for your appointment?</strong></p>
+								<div class="row">
+									<div class="col">
+										<input class="form-control datepicker" id="q5-datepicker" placeholder="06/13/2021">
+									</div>
+									<div class="col">
+										<input class="form-control" id="q5-hourpicker" placeholder="16" maxlength="2">
+									</div>
+									<p style="margin-top: 0.5%">:</p>
+									<div class="col">
+										<input class="form-control" id="q5-minutepicker" placeholder="30" maxlength="2">
+									</div>
+								</div>
+
+								<script>
+									$(function(){
+										$('.datepicker').datepicker({
+										   format: "dd.mm.yyyy",
+										   todayBtn: "linked",
+										   language: "en"
+										});
+									});
+								</script>
+							</div>
+							<hr>
+						</form>
+
+						<a href="#" class="btn btn-primary mx-auto d-block" style="color: white">Book Appointment</a>
+					</div>
+				</div>
 			</div>
 			<br>
 		</div>
 
-<!--		<footer class="custom-footer">-->
-<!--			<div class="text-center">-->
-<!--				Site created by Rami Zeid-->
-<!--			</div>-->
-<!--		</footer>-->
+		<footer class="footer text--center text--lg-left">
+			<div class="container-fluid">
+				<br>
+				<br>
+				<br>
+				<div class="row" style="margin-left: 10%;">
+					<div class="col col-xs-12">
+						<a class="navbar-brand" href="#" style="max-width: 100%;">
+							<img class="img-responsive" src="images/logo.png"  style="width: 100px; margin-top: 2.5%">
+						</a>
+					</div>
+				</div>
+
+				<br>
+
+				<div class="row" style="margin-left: 10%;">
+					<div class="col">
+						<address style="max-width: 100%;">
+							<p><b>Contact Us</b></p>
+							<p style="color: #ffffff">2446 Bank St, Ottawa</p>
+							<p style="color: #ffffff">(613)-123-1234</p>
+						</address>
+					</div>
+
+					<div class="col">
+						<div>
+							<nav class="navigation">
+								<div class="row">
+									<div class="col col-xs-auto col-md-auto col-lg-4">
+										<ul style="list-style-type: none;">
+											<li style="margin-bottom: 1rem"><a href="#" style="color: #ffffff">Terms of Service</a></li>
+											<li><a href="#" style="color: #ffffff">Privacy Policy</a></li>
+										</ul>
+									</div>
+								</div>
+							</nav>
+						</div>
+					</div>
+				</div>
+
+				<br>
+				<br>
+
+				<div class="row" style="margin-left: 10%;">
+					<div class="col col-sm-10 col-md-8 col-lg-6">
+						<div>
+							<span style="font-size: 0.75rem; color: #787878">© 2021 Physiocare Corporation, All rights reserved</span>
+						</div>
+					</div>
+				</div>
+
+				<br>
+			</div>
+		</footer>
 	</body>
 
 	<script type="text/javascript" src="scripts/main.js"></script>
