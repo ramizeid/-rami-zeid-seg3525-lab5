@@ -5,6 +5,18 @@ window.onscroll = function () {
     scrollFunction();
 };
 
+onLoad();
+
+// This function makes it so that the div container starts after the navbar
+function onLoad() {
+    let headerHeight = document.getElementById('navbar').offsetHeight;
+    let landingDiv = document.getElementById('landing')
+    let landingDivHeight = landingDiv.offsetHeight;
+
+    landingDiv.style.marginTop = `${headerHeight}px`;
+    landingDiv.style.height = `${landingDivHeight - headerHeight}px`;
+}
+
 function scrollFunction() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20 ) {
         backToTopButton.style.display = "block";
