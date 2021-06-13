@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-	<link rel="icon" type="image/png" href="images/logo_icon.ico"/>
+	<link rel="icon" type="image/png" href="images/logo.png"/>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500" rel="stylesheet">
+	<link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
 	<head>
 		<meta charset="UTF-8">
-		<title>Loblaws Supermarket</title>
+		<title>Physiocare</title>
 
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="style/style.css">
@@ -14,163 +16,157 @@
 	</head>
 
 	<body>
-		<nav class="navbar">
-			<a class="navbar-brand" style="margin-top: 1%;">
-				<img class="img-responsive" src="images/full_logo.png" id="navbar-img">
-			</a>
+		<button class="btn btn-danger btn-floating btn-lg" id="back-to-top-button" onclick="toTopScroll()">
+			<i class="icon-arrow-up"></i>
+		</button>
+
+		<nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top" id="navbar">
+			<a class="navbar-left" href="#" id="navbar-logo-div"><img src="images/logo.png" id="navbar-logo"></a>
+			<a class="navbar-brand" href="#" id = navbar-title>Physiocare</a>
+
+			<ul class="navbar-nav ml-auto" id="navbar-options-div">
+				<li class="nav-item">
+					<a class="nav-link" id="navbar-option" onclick="landingArrowScroll()">About</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="navbar-option" onclick="therapistsScroll()">Therapists</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="navbar-option" onclick="servicesScroll()">Services</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#" id="navbar-option">Booking</a>
+				</li>
+		  	</ul>
+
+			<!-- Script courtesy of Stack Overflow: https://stackoverflow.com/questions/34831602/increase-element-
+			opacity-when-user-scrolls-down-the-page -->
+			<script>
+				$(window).scroll(function() {
+				    let scrollTop = $(this).scrollTop();
+
+					$('.navbar').css({
+						opacity: function() {
+						    let elementHeight = $(this).height() * 3;
+						  	return (elementHeight - scrollTop) / elementHeight;
+					  	}
+				  	});
+				});
+			</script>
 		</nav>
 
-		<div class="container-fluid d-flex align-items-center justify-content-center" style="min-height: 75%">
-			<div class="card shadow" id="shop-card">
-				<h5 class="card-header" id="shop-card-header">Welcome to Loblaws</h5>
+		<div class="with-background" id="landing">
+			<!-- This script makes it so that the div container starts after the navbar -->
+			<script>
+				let headerHeight = document.getElementById('navbar').offsetHeight;
+				let landingDiv = document.getElementById('landing')
+				let landingDivHeight = landingDiv.offsetHeight;
 
-				<div class="btn-group full-width" role="group" id="translate-panel" aria-label="Translate Panel" style="width: 100%">
-					<button type="button" class="btn btn-outline-primary" id="english-translate-btn" onclick="isWebsiteInEnglish()">Translate to English</button>
-					<button type="button" class="btn btn-outline-primary" id="french-translate-btn" onclick="isWebsiteInFrench()">Translate to French</button>
-				</div>
+				landingDiv.style.marginTop = `${headerHeight}px`;
+				landingDiv.style.height = `${landingDivHeight - headerHeight}px`;
+			</script>
 
-				<div class="btn-group full-width" role="group" id="shop-buttons-panel" aria-label="Shop Buttons Panel" style="width: 100%">
-					<button type="button" class="btn btn-secondary" id="client-panel-btn" onclick="loadPanel('client-panel-body', 'client-panel-btn')">Client Panel</button>
-					<button type="button" class="btn btn-secondary" id="products-panel-btn" onclick="loadPanel('products-panel-body', 'products-panel-btn')">Products</button>
-					<button type="button" class="btn btn-secondary" id="shopping-cart-btn" onclick="loadPanel('shopping-cart-body', 'shopping-cart-btn')">Cart</button>
-				</div>
+			<div class="container-fluid d-flex align-items-center justify-content-center">
+				<p id="landing-text-1">Welcome to Physiocare</p>
+			</div>
 
-				<div id="panels">
-					<div class="card-body" id="client-panel-body">
-						<h5 class="card-title text-center">We'd like to learn more about you!</h5>
-						<hr>
-						<form id="client-panel-form">
-							<div class="question" id="q1">
-								<p><strong>What is your name?</strong></p>
-								<p id="q1-error-message" style="display: none; color: red; margin-top: -2%; margin-bottom: 1%">* This field is required.</p>
-								<input class="form-control" id="q1-text-area" type="text" placeholder="Name">
-							</div>
-							<hr>
-							<div class="question" id="q2">
-								<p><strong>Select the intolerance(s) that you possess. Please note that our list of products will vary based on your choice.</strong></p>
+			<div class="container-fluid d-flex align-items-center justify-content-center">
+				<img src="images/logo.png" id="navbar-logo">
+			</div>
 
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" name="q2-option" id="q2-option1" value="q2-option1">
-									<label class="form-check-label" for="q2-option1">Lactose intolerance</label>
-								</div>
+			<div class="container-fluid d-flex align-items-center justify-content-center">
+				<p id="landing-text-2">Natural Pain Relief</p>
+			</div>
 
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" name="q2-option" id="q2-option2" value="q2-option2">
-									<label class="form-check-label" for="q2-option2">Nut allergy</label>
-								</div>
-							</div>
-							<hr>
-							<div class="question" id="q3">
-								<p><strong>Do you prefer your produce to be organic?</strong></p>
+			<div class="container-fluid d-flex align-items-center justify-content-center">
+				<p id="landing-text-3"><i>Physiotherapy Done Differently</i></p>
+			</div>
 
-								<div class="form-check">
-									<input class="form-check-input" type="radio" name="q3-option" id="q3-option1" value="q3-option1">
-									<label class="form-check-label" for="q3-option1">Yes</label>
-								</div>
-
-								<div class="form-check">
-									<input class="form-check-input" type="radio" name="q3-option" id="q3-option2" value="q3-option2">
-									<label class="form-check-label" for="q3-option2">No</label>
-								</div>
-
-								<div class="form-check">
-									<input class="form-check-input" type="radio" name="q3-option" id="q3-option3" value="q3-option3" checked>
-									<label class="form-check-label" for="q3-option3">No preference</label>
-								</div>
-							</div>
-							<hr>
-							<div class="question" id="q4">
-								<p><strong>Please select your budget.</strong></p>
-								<p id="q4-error-message" style="display: none; color: red; margin-top: -2%; margin-bottom: 1%">* This field is required.</p>
-
-								<p class="alert text-center" role="alert" id="q4-range-text" style="background-color: #EEEEEE; border-radius: 15px;"></p>
-
-								<input type="range" class="form-range" style="width: 100%" min="0" max="3" step="1" value="0" id="q4-range">
-
-								<!-- Script courtesy of Stack Overflow: https://stackoverflow.com/questions/47999809/how
-								-can-i-change-or-customize-the-alert-colors-bootstrap-4-and-ruby-on-rails-5 -->
-								<script>
-                                    const q4RangeValues = {
-                                        "0": "None - Unlimited",
-                                        "1": "Small - Under $5",
-                                        "2": "Medium - Under $10",
-                                        "3": "Large - Above $10",
-                                    };
-
-                                    $(function () {
-										$('#q4-range-text').text(q4RangeValues[$('#q4-range').val()]);
-
-										$('#q4-range').on('input change', function () {
-											$('#q4-range-text').text(q4RangeValues[$(this).val()]);
-										});
-
-									});
-								</script>
-							</div>
-							<hr>
-						</form>
-
-						<a class="btn btn-primary mx-auto d-block" style="color: white" onclick="clientPanelNextButtonClick()">Next</a>
-					</div>
-
-					<div class="card-body" id="products-panel-body">
-						<h5 class="card-title text-center">List of available products</h5>
-						<hr>
-						<div class="alert alert-danger" role="alert" id="products-missing-fields-alert">
-							<h5 class="alert-heading text-center">All required fields must be submitted in the client panel.</h5>
-						</div>
-
-						<div class="alert alert-danger" role="alert" id="products-no-products-alert" style="display: none">
-							<h5 class="alert-heading text-center">No products matching your input were found.</h5>
-						</div>
-
-						<p id="products-error-message" style="display: none; color: red; margin-top: -2%; margin-bottom: 1%">* You must add an item to your cart.</p>
-
-						<table class="table" id="products-table" style="display: none">
-							<thead class="table-dark">
-								<tr>
-									<th scope="col">Product</th>
-									<th scope="col">Price</th>
-									<th scope="col">Category</th>
-									<th scope="col">Picture</th>
-									<th scope="col">Add to cart</th>
-								</tr>
-							</thead>
-							<tbody id="products-table-tbody"></tbody>
-						</table>
-						<hr>
-						<a class="btn btn-primary mx-auto" style="color: white; display: none" id="add-to-cart-button" onclick="addToCartButtonClick()">Add selected items to cart</a>
-					</div>
-
-					<div class="card-body" id="shopping-cart-body">
-						<h5 class="card-title text-center" id="shopping-card-title">Shopping cart</h5>
-						<hr>
-						<div class="alert alert-danger" role="alert" id="no-products-in-cart-alert">
-							<h5 class="alert-heading text-center">No products were found in your cart.</h5>
-						</div>
-
-						<table class="table" id="cart-table" style="display: none">
-							<thead class="table-dark">
-								<tr>
-									<th scope="col">Product</th>
-									<th scope="col">Price</th>
-								</tr>
-							</thead>
-							<tbody id="cart-table-tbody"></tbody>
-							<tfoot id="cart-table-tfoot"></tfoot>
-						</table>
-						<hr>
-						<a class="btn btn-primary mx-auto" style="color: white; display: none" id="place-order-button">Place your order</a>
-					</div>
-				</div>
+			<div class="container-fluid d-flex align-items-center justify-content-center">
+				<button class="btn" id="landing-arrow-button" onclick="landingArrowScroll()"><img src="images/arrow-down-icon.png" id="landing-arrow-icon"></button>
 			</div>
 		</div>
 
-		<footer class="custom-footer">
-			<div class="text-center">
-				Site created by Rami Zeid
+		<div id="about">
+			<hr style="height:10px; border:none; background-color:#393939; margin: 0">
+
+			<div class="container-fluid d-flex align-items-center justify-content-center">
+				<p id="about-text-1">About Us</p>
 			</div>
-		</footer>
+
+			<!-- Text courtesy of life spring clinic: http://www.lifespringclinics.ca/mission-vision-values/ -->
+			<div class="row" style="margin-top: 2%">
+				<div class="col text-center">
+					<img src="images/mission-statement-icon.png" id="mission-statement-icon">
+					<p id="about-text-2"><strong>Our Mission</strong></p>
+					<p id="about-text-3">We offer unique, refreshing, whole-patient care. We inspire and assist our
+						clients in healthier lifestyles by promoting, restoring and maintaining the physical
+						well-being of our community.</p>
+				</div>
+				<div class="col text-center">
+					<img src="images/vision-statement-icon.png" id="mission-statement-icon">
+					<p id="about-text-2"><strong>Our Vision</strong></p>
+					<p id="about-text-3">We are a team of innovative, empathetic, exemplary healthcare professionals
+						who are driven by passion, inspiration and performance as we care for our clients from every
+						age, stage and walk of life.</p>
+				</div>
+			</div>
+			<br>
+		</div>
+
+		<div class="with-background-2" id="therapists">
+			<hr style="height:10px; border:none; background-color:#393939; margin: 0">
+
+			<div class="container-fluid d-flex align-items-center justify-content-center">
+				<p id="about-text-1">Our Therapists</p>
+			</div>
+
+			<!-- Text courtesy of life spring clinic: http://www.lifespringclinics.ca/mission-vision-values/ -->
+			<div class="row" style="margin-top: 2%">
+				<div class="col text-center">
+					<img src="images/simon-smith-img.png" id="mission-statement-icon">
+					<p id="about-text-2"><strong>Dr. Simon Smith</strong></p>
+					<p id="about-text-3">Simon is a graduate of the University of Toronto’s Master of Science in
+						Physical Therapy program. Prior to this, he obtained a Bachelor of Science in Human Kinetics
+						and a Master of Science in Bio-mechanics from the University of Guelph.</p>
+				</div>
+				<div class="col text-center">
+					<img src="images/haley-kurtis-img.png" id="mission-statement-icon">
+					<p id="about-text-2"><strong>Haley Kurtis</strong></p>
+					<p id="about-text-3">Haley is a graduate of the University of Toronto’s Masters of Science in
+						Physical Therapy program and also has a Bachelor of Science in Kinesiology from the University
+						of Western Ontario. During his time at Western, Michael pursued his passion for fitness,
+						completing his personal training certificate through the Canadian Society of Exercise
+						and Physiology.</p>
+				</div>
+				<div class="col text-center">
+					<img src="images/james-mitchell.png" id="mission-statement-icon">
+					<p id="about-text-2"><strong>James Mitchell</strong></p>
+					<p id="about-text-3">Physiocare’s Founder & CEO, James, has been practicing as a
+						physiotherapist since 1997, after having obtained a Bachelor of Physical and Health Education
+						(BPHE) and a Bachelor of Science in Physiotherapy (BScPT) from Queen’s University,
+						Kingston Ontario.</p>
+				</div>
+			</div>
+			<br>
+		</div>
+
+		<div id="services">
+			<hr style="height:10px; border:none; background-color:#393939; margin: 0">
+
+			<div class="container-fluid d-flex align-items-center justify-content-center">
+				<p id="about-text-1">Our Services</p>
+			</div>
+
+			<div class="accordion" id="servicesAccordion">
+			</div>
+		</div>
+
+<!--		<footer class="custom-footer">-->
+<!--			<div class="text-center">-->
+<!--				Site created by Rami Zeid-->
+<!--			</div>-->
+<!--		</footer>-->
 	</body>
 
 	<script type="text/javascript" src="scripts/main.js"></script>

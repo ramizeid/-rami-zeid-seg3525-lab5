@@ -4,72 +4,132 @@ html, body {
 
 body {
     background-color: #EFF4FB;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
-.navbar {
-    position: relative;
+#navbar-logo {
+    width: 125px;
 }
 
-#shop-card {
-    width: 75%;
-    margin: 5% 25% 5% 25%;
-    float: none;
-    border-radius: 15px;
+#navbar-logo-div {
+    margin-left: 5%;
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
 }
 
-#navbar-img {
-    width: 10%;
-    position: absolute;
-    left: 45%;
-    display: block;
+#navbar-title {
+    font-size: 2.75em;
+    margin-left: 2%;
 }
 
-#shop-card-header {
-    background-color: #3B3B3B;
-    color: #fff;
-    text-align: center;
-    border-radius: 15px 15px 0px 0px;
+#navbar-option {
+    font-size: 1.5em;
 }
 
-.question {
-    margin: 0% 3% 0% 3%;
+#navbar-option:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
-.custom-footer {
-    margin-top: -3%;
-    margin-bottom: 3%;
+#navbar-options-div {
+    margin-right: 5%;
 }
 
-.btn-group.full-width {
-    display: flex;
+.with-background {
+    /* The image used */
+    background: url("../images/top-background-image.png") no-repeat center center fixed;
+
+    /* Full height */
+    height: 100vh;
+    width: auto;
+
+    /* Center and scale the image nicely */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
-.full-width .btn {
-    width: 100%;
-    flex: 1;
-    border-radius: 0px;
+.with-background-2 {
+    /* The image used */
+    background: url("../images/top-background-image.png") no-repeat center center fixed;
+
+    /* Full height */
+    width: auto;
+
+    /* Center and scale the image nicely */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
-#products-missing-fields-alert {
-    border-radius: 10px;
-    max-width: 75%;
-    margin-left: 12.5%;
-    margin-top: 5%;
-    margin-bottom: 5%
+#landing-text-1 {
+    margin-top: 3%;
+    margin-bottom: -0.5%;
+    font-size: 5em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
 }
 
-#products-no-products-alert {
-    border-radius: 10px;
-    max-width: 75%;
-    margin-left: 12.5%;
-    margin-top: 5%;
-    margin-bottom: 5%
+#landing-text-2 {
+    font-size: 3.5em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
 }
 
-#no-products-in-cart-alert {
-    border-radius: 10px;
-    max-width: 75%;
-    margin-left: 12.5%;
-    margin-top: 5%;
-    margin-bottom: 5%
+#landing-text-3 {
+    font-size: 3em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+}
+
+#landing-arrow-icon {
+    height: 125px;
+    transition: 0.5s;
+}
+
+#landing-arrow-icon:hover {
+    opacity: 0.5;
+}
+
+#landing-arrow-button:focus {
+    box-shadow: none;
+}
+
+#about-text-1 {
+    margin-top: 3%;
+    margin-bottom: -0.5%;
+    font-size: 4em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+#about-text-2 {
+    font-size: 2em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+#about-text-3 {
+    font-size: 1.5em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#mission-statement-icon {
+    height: 100px;
+    margin-bottom: 2%;
+}
+
+#back-to-top-button {
+    position: fixed;
+    bottom: 5%;
+    right: 2%;
+    display: none;
+    z-index: 10;
+    transition: 2s;
 }
