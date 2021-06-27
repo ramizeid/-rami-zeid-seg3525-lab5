@@ -10,8 +10,8 @@
 		<meta charset="UTF-8">
 		<title>Physiocare</title>
 
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 		<link href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="style/style.css">
 	</head>
 
@@ -51,6 +51,12 @@
 						  	return (elementHeight - scrollTop) / elementHeight;
 					  	}
 				  	});
+
+					if($('.navbar').css('opacity') <= 0 && $('.navbar').is(":visible")) {
+						$('.navbar').hide();
+					} else if ($('.navbar').css('opacity') > 0 && $('.navbar').is(":hidden")) {
+					    $('.navbar').show();
+					}
 				});
 			</script>
 		</nav>
@@ -126,26 +132,38 @@
 				<div class="col text-center">
 					<img src="images/simon-smith-img.png" id="mission-statement-icon">
 					<p id="about-text-2"><strong>Dr. Simon Smith</strong></p>
+					<hr style="width: 50%">
+					<p id="about-text-3"><strong>Availability: Mondays & Wednesdays</strong></p>
+					<hr style="width: 50%">
 					<p id="about-text-3">Simon is a graduate of the University of Toronto’s Master of Science in
 						Physical Therapy program. Prior to this, he obtained a Bachelor of Science in Human Kinetics
-						and a Master of Science in Bio-mechanics from the University of Guelph.</p>
+						and a Master of Science in Bio-mechanics from the University of Guelph.
+					</p>
 				</div>
 				<div class="col text-center">
 					<img src="images/haley-kurtis-img.png" id="mission-statement-icon">
 					<p id="about-text-2"><strong>Haley Kurtis</strong></p>
+					<hr style="width: 50%">
+					<p id="about-text-3"><strong>Availability: Tuesdays & Thursdays</strong></p>
+					<hr style="width: 50%">
 					<p id="about-text-3">Haley is a graduate of the University of Toronto’s Masters of Science in
 						Physical Therapy program and also has a Bachelor of Science in Kinesiology from the University
 						of Western Ontario. During his time at Western, Michael pursued his passion for fitness,
 						completing his personal training certificate through the Canadian Society of Exercise
-						and Physiology.</p>
+						and Physiology.
+					</p>
 				</div>
 				<div class="col text-center">
 					<img src="images/james-mitchell.png" id="mission-statement-icon">
 					<p id="about-text-2"><strong>James Mitchell</strong></p>
+					<hr style="width: 50%">
+					<p id="about-text-3"><strong>Availability: Fridays</strong></p>
+					<hr style="width: 50%">
 					<p id="about-text-3">Physiocare’s Founder & CEO, James, has been practicing as a
 						physiotherapist since 1997, after having obtained a Bachelor of Physical and Health Education
 						(BPHE) and a Bachelor of Science in Physiotherapy (BScPT) from Queen’s University,
-						Kingston Ontario.</p>
+						Kingston Ontario.
+					</p>
 				</div>
 			</div>
 			<br>
@@ -171,7 +189,8 @@
 							<p class="card-text" id="service-card-body">Acupuncture is a stimulation therapy that involves inserting very fine needles into specific points in the body. It is an ancient Chinese remedy that encourages natural healing and pain relief by promoting harmony within the body.</p>
 						</div>
 						<div class="card-footer" style="background: inherit; border-color: inherit;">
-							<p class="alert text-center" role="alert" id="q4-range-text" style="background-color: #EEEEEE; border-radius: 15px; font-family: 'Montserrat', sans-serif; border-color: #3B3B3B"><strong>Price: $15/Hour</strong></p>
+							<p class="alert text-center" role="alert" style="background-color: #EEEEEE; border-radius: 15px; font-family: 'Montserrat', sans-serif; border-color: #3B3B3B"><strong>Price: $15/Hour</strong></p>
+							<a onclick="bookingScroll()" class="btn btn-success mx-auto d-block" style="color: white; border-radius: 15px; font-family: 'Montserrat', sans-serif;">Book Service</a>
 						</div>
 					</div>
 				</div>
@@ -187,7 +206,8 @@
 							<p class="card-text" id="service-card-body">Chinese Cupping is an antient alternative therapy that is used to treat a wide variety of conditions that create muscle aches and pains. During treatment, a cup is placed on the skin and then suctioned onto the skin, which helps with pain and inflammation as well as facilitate healing with blood flow.</p>
 						</div>
 						<div class="card-footer" style="background: inherit; border-color: inherit;">
-							<p class="alert text-center" role="alert" id="q4-range-text" style="background-color: #EEEEEE; border-radius: 15px; font-family: 'Montserrat', sans-serif; border-color: #3B3B3B"><strong>Price: $25/Hour</strong></p>
+							<p class="alert text-center" role="alert" style="background-color: #EEEEEE; border-radius: 15px; font-family: 'Montserrat', sans-serif; border-color: #3B3B3B"><strong>Price: $25/Hour</strong></p>
+							<a onclick="bookingScroll()" class="btn btn-success mx-auto d-block" style="color: white; border-radius: 15px; font-family: 'Montserrat', sans-serif;">Book Service</a>
 						</div>
 					</div>
 				</div>
@@ -205,7 +225,8 @@
 							<p class="card-text" id="service-card-body">Massage Therapy is a hands-on manipulation of the soft tissue and joints of the body conducted by our top of the line massage therapists. The soft tissues include muscle, skin, tendon and associated fascia, ligaments and joint capsules.</p>
 						</div>
 						<div class="card-footer" style="background: inherit; border-color: inherit;">
-							<p class="alert text-center" role="alert" id="q4-range-text" style="background-color: #EEEEEE; border-radius: 15px; font-family: 'Montserrat', sans-serif; border-color: #3B3B3B"><strong>Price: $30/Hour</strong></p>
+							<p class="alert text-center" role="alert" style="background-color: #EEEEEE; border-radius: 15px; font-family: 'Montserrat', sans-serif; border-color: #3B3B3B"><strong>Price: $30/Hour</strong></p>
+							<a onclick="bookingScroll()" class="btn btn-success mx-auto d-block" style="color: white; border-radius: 15px; font-family: 'Montserrat', sans-serif;">Book Service</a>
 						</div>
 					</div>
 				</div>
@@ -221,7 +242,8 @@
 							<p class="card-text" id="service-card-body">Our interdisciplinary team of healthcare professionals will work with you and your Doctor or specialist to complete a timely assessment and develop a customized treatment plan to address your specific health concerns. We provide an advanced approach to concussion awareness and management to ensure that you experience the least amount of symptoms.</p>
 						</div>
 						<div class="card-footer" style="background: inherit; border-color: inherit;">
-							<p class="alert text-center" role="alert" id="q4-range-text" style="background-color: #EEEEEE; border-radius: 15px; font-family: 'Montserrat', sans-serif; border-color: #3B3B3B"><strong>Price: $45/Hour</strong></p>
+							<p class="alert text-center" role="alert" style="background-color: #EEEEEE; border-radius: 15px; font-family: 'Montserrat', sans-serif; border-color: #3B3B3B"><strong>Price: $45/Hour</strong></p>
+							<a onclick="bookingScroll()" class="btn btn-success mx-auto d-block" style="color: white; border-radius: 15px; font-family: 'Montserrat', sans-serif;">Book Service</a>
 						</div>
 					</div>
 				</div>
@@ -238,6 +260,7 @@
 						</div>
 						<div class="card-footer" style="background: inherit; border-color: inherit;">
 							<p class="alert text-center" role="alert" style="background-color: #EEEEEE; border-radius: 15px; font-family: 'Montserrat', sans-serif; border-color: #3B3B3B"><strong>Price: $50/Hour</strong></p>
+							<a onclick="bookingScroll()" class="btn btn-success mx-auto d-block" style="color: white; border-radius: 15px; font-family: 'Montserrat', sans-serif;">Book Service</a>
 						</div>
 					</div>
 				</div>
@@ -260,64 +283,132 @@
 					<div class="card-body" id="booking-panel-body">
 						<h5 class="card-title text-center">We'd like to learn more about you!</h5>
 						<hr>
-						<form id="booking-form">
+						<form id="booking-form" novalidate>
 							<div class="question" id="q1">
-								<p><strong>What is your full name?</strong></p>
-								<input class="form-control" id="q1-text-area" type="text" placeholder="Name">
+								<p><img src="images/full-name-icon.png" id="form-icon" style="margin-top: -0.25%"><strong>What is your full name?</strong></p>
+								<input class="form-control" id="q1-text-area" type="text" placeholder="Name" required>
+								<div class="invalid-feedback">Please provide your full name.</div>
 							</div>
 							<hr>
 							<div class="question" id="q2">
-								<p><strong>Which service would you like to book?</strong></p>
+								<p><img src="images/services-icon.png" id="form-icon" style="margin-top: -1%"><strong>Which service would you like to book?</strong></p>
 
-								<select class="custom-select text-center" id="q2-dropdown">
-									<option value="q2-none">None</option>
+								<select class="custom-select text-center" id="q2-dropdown" required>
+									<option value="" selected disabled>None</option>
 									<option value="q2-1">Acupuncture - $15/Hour</option>
 									<option value="q2-2">Chinese Cupping - $25/Hour</option>
 									<option value="q2-3">Massage Therapy - $30/Hour</option>
 									<option value="q2-4">Concussion Therapy - $45/Hour</option>
 									<option value="q2-5">Electrotherapy - $50/Hour</option>
 								</select>
+
+								<div class="invalid-feedback">Please select a service.</div>
 							</div>
 							<hr>
 							<div class="question" id="q3">
-								<p><strong>What is phone number?</strong></p>
-								<input class="form-control" id="q3-text-area" type="text" placeholder="(123)-456-7890">
+								<p><img src="images/staff-icon.png" id="form-icon" style="margin-top: -1%"><strong>Which therapist would you like to book your appointment with?</strong></p>
+
+								<select class="custom-select text-center" id="q3-dropdown" onchange="therapistChange()" required>
+									<option value="" selected disabled>None</option>
+									<option value="q3-1">Dr. Simon Smith - Mondays & Wednesdays</option>
+									<option value="q3-2">Haley Kurtis - Tuesdays & Thursdays</option>
+									<option value="q3-3">James Mitchell - Fridays</option>>
+								</select>
+
+								<div class="invalid-feedback">Please select a therapist.</div>
 							</div>
 							<hr>
 							<div class="question" id="q4">
-								<p><strong>What is your address?</strong></p>
-								<input class="form-control" id="q4-text-area" type="text" placeholder="123 Laurier Avenue, Ottawa, Canada">
+								<p><img src="images/phone-number-icon.png" id="form-icon" style="margin-top: -1%"><strong>What is your phone number?</strong><button class="btn" id="info-icon-button" onclick="return false" data-toggle="tooltip" title="Please enter a valid 10-digit phone number. The hyphens will automatically be added."><img src="images/info-icon.png" id="info-icon"></button></p>
+								<input class="form-control" id="q4-text-area" type="tel" placeholder="(123)-456-7890" maxlength="12" pattern="^\d{3}-\d{3}-\d{4}$" required>
+								<div class="invalid-feedback">Please provide a valid 10-digit phone number that does only includes numbers.</div>
+
+								<script>
+									$('#q4-text-area').keyup(function(){
+									    if($('#q4-text-area').val().length > 12) {
+									        $('#q4-text-area').val($('#q4-text-area').val().slice(0, 12));
+                                        }
+									    $(this).val($(this).val().replace(/(\d{3})\-?(\d{3})\-?(\d{4})/,'$1-$2-$3'))
+									});
+								</script>
 							</div>
 							<hr>
 							<div class="question" id="q5">
-								<p><strong>When are you available for your appointment?</strong></p>
+								<p><img src="images/address-icon.png" id="form-icon" style="margin-top: -1%"><strong>What is your address?</strong></p>
+								<input class="form-control" id="q5-text-area" type="text" placeholder="123 Laurier Avenue, Ottawa, Canada" required>
+								<div class="invalid-feedback">Please provide your address.</div>
+							</div>
+							<hr>
+							<div class="question" id="q6">
+								<p><img src="images/calendar-icon.png" id="form-icon" style="margin-top: -1%"> <strong>When are you available for your appointment?</strong></p>
 								<div class="row">
 									<div class="col">
-										<input class="form-control datepicker" id="q5-datepicker" placeholder="06/13/2021">
+										<input class="form-control datepicker" id="q6-datepicker" placeholder="06/13/2021" onkeydown="return false;" required>
+										<div class="invalid-feedback">Please select a valid date.</div>
 									</div>
 									<div class="col">
-										<input class="form-control" id="q5-hourpicker" placeholder="16" maxlength="2">
-									</div>
-									<p style="margin-top: 0.5%">:</p>
-									<div class="col">
-										<input class="form-control" id="q5-minutepicker" placeholder="30" maxlength="2">
+										<input class="form-control" type="time" id="q6-timepicker" required>
+										<div class="invalid-feedback">Please select a valid time.</div>
 									</div>
 								</div>
 
 								<script>
 									$(function(){
-										$('.datepicker').datepicker({
-										   format: "dd.mm.yyyy",
-										   todayBtn: "linked",
-										   language: "en"
-										});
+									    const date = new Date();
+									    const today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+
+									    $('.datepicker').datepicker({
+											format: "dd.mm.yyyy",
+											todayBtn: "linked",
+											minDate: today,
+											language: "en",
+
+											beforeShowDay: $.datepicker.noWeekends
+									    });
 									});
 								</script>
 							</div>
 							<hr>
+							<div class="question" id="q7">
+								<p><img src="images/credit-card-icon.png" id="form-icon" style="margin-top: -0.25%"><strong>Please enter your card number for payment</strong><button class="btn" id="info-icon-button" onclick="return false" data-toggle="tooltip" title="Please enter a valid 16-digit debit or credit card number. This is required in-case of a no-show on your behalf. The hyphens will automatically be added."><img src="images/info-icon.png" id="info-icon"></button></p>
+								<input class="form-control" id="q7-text-area" type="tel" placeholder="XXXX-XXXX-XXXX-XXXX" maxlength="19" pattern="^\d{4}-\d{4}-\d{4}-\d{4}$" required>
+								<div class="invalid-feedback">Please provide a valid 16-digit debit or credit card number that does only includes numbers.</div>
+
+								<script>
+									$('#q7-text-area').keyup(function(){
+									    if($('#q7-text-area').val().length > 19) {
+									        $('#q7-text-area').val($('#q7-text-area').val().slice(0, 19));
+                                        }
+									    $(this).val($(this).val().replace(/(\d{4})\-?(\d{4})\-?(\d{4})\-?(\d{4})/,'$1-$2-$3-$4'))
+									});
+								</script>
+							</div>
+							<hr>
+
+							<a id="form-submit-btn" type="submit" class="btn btn-primary mx-auto d-block" style="color: white; font-family: 'Montserrat', sans-serif;">Book Appointment</a>
 						</form>
 
-						<a href="#" class="btn btn-primary mx-auto d-block" style="color: white">Book Appointment</a>
+						<!-- Script courtesy of the Bootstrap documentation page: https://getbootstrap.com/docs/4.0/
+						components/forms/?#validation-->
+						<script>
+							(function() {
+							    'use strict';
+							    window.addEventListener('load', function() {
+							        const form = document.getElementById('booking-form');
+
+									document.getElementById("form-submit-btn").onclick = function(event) {
+										if (form.checkValidity() === false) {
+											event.preventDefault();
+											event.stopPropagation();
+										} else {
+										    alert(`Thank you for booking with us, ${$('#q1-text-area').val()}!\n\nYour appointment has been successfully scheduled for ${$('.datepicker').val()} at ${$('#q6-timepicker').val()} with ${$('#q3-dropdown option:selected').text().split("-")[0].trim()}.\n\nService booked: ${$('#q2-dropdown option:selected').text().split("-")[0].trim()}`)
+										}
+
+										form.classList.add('was-validated');
+									}
+							  	}, false);
+							})();
+						</script>
 					</div>
 				</div>
 			</div>

@@ -207,3 +207,27 @@ body {
   line-height: 1.4;
   font-size: 1.1rem;
 }
+
+#form-icon {
+    height: 25px;
+    margin-right: 1%;
+}
+
+#info-icon-button {
+    margin-top: -1%;
+    margin-left: -1%;
+}
+
+#info-icon-button:focus {
+    box-shadow: none;
+}
+
+#info-icon {
+    height: 20px;
+    /*margin-top: -0.5%;*/
+    /*margin-left: 1%;*/
+}
+
+#info-icon:hover {
+    opacity: 0.5;
+}
